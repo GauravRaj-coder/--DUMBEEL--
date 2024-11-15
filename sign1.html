@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Yellow Theme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffd700;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5rem;
+            color: #ffeb99; /* Slightly lighter for contrast */
+        }
+        input {
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ffd700;
+            background-color: #1a1a1a;
+            color: #ffd700;
+            border-radius: 4px;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+        button {
+            padding: 0.75rem;
+            background-color: #ffd700;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #ffea00;
+        }
+        .terms {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .terms a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        .terms a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form id="signInForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit" id="signInButton">Sign In</button>
+        </form>
+        <div class="terms">
+            By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("signInButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevents form submission for pop-up
+
+            // Retrieve input values
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username && password) {
+                // Display welcome message
+                alert("Welcome, " + username + "! You have successfully signed in.");
+                // Uncomment to submit form after alert:
+                // document.getElementById("signInForm").submit();
+            } else {
+                alert("Please fill in both the username and password fields.");
+            }
+        });
+    </script>
+</body>
+</html>

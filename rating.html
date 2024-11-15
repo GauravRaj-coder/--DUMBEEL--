@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating with Thanks</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f2;
+        }
+        .rating-container {
+            background-color: #10100f;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .rating {
+            display: inline-block;
+            font-size: 0;
+            position: relative;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        .rating > label {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+            font-size: 50px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+        .rating > label:hover,
+        .rating > label:hover ~ label,
+        .rating > input:checked ~ label {
+            color: transparent;
+        }
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before,
+        .rating > input:checked ~ label:before,
+        .rating > input:checked + label:hover:before,
+        .rating > input:checked ~ label:hover:before,
+        .rating > label:hover ~ input:checked ~ label:before {
+            content: "\2605";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+        .rating > input {
+            display: none;
+        }
+        .rating > label:active {
+            transform: scale(0.8);
+            transition: transform 0.1s ease-in-out;
+        }
+        .rating-value {
+            font-size: 24px;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+            min-height: 36px;
+        }
+        .thanks-message {
+            font-size: 20px;
+            color: #ecc70c;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .thanks-message.show {
+            opacity: 1;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .rating > input:checked + label {
+            animation: pulse 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="rating-container">
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">&#9733;</label>
+        </div>
+        <div class="rating-value" aria-live="polite">Rate us!</div>
+        <div class="thanks-message" aria-live="polite"></div>
+    </div>
+
+    <script>
+        document.querySelector('.rating').addEventListener('change', function(e) {
+            if (e.target && e.target.matches('input[type="radio"]')) {
+                const ratingValue = e.target.value;
+                const ratingDisplay = document.querySelector('.rating-value');
+                const thanksMessage = document.querySelector('.thanks-message');
+                
+                ratingDisplay.textContent = `You rated: ${ratingValue} star${ratingValue !== '1' ? 's' : ''}`;
+                
+                // Show thanks message
+                thanksMessage.textContent = `Thanks for your ${ratingValue}-star rating!`;
+                thanksMessage.classList.add('show');
+                
+                // Optional: Hide rating stars after submission
+                document.querySelector('.rating').style.pointerEvents = 'none';
+                document.querySelector('.rating').style.opacity = '0.5';
+                
+                console.log('Selected rating:', ratingValue);
+            }
+        });
+    </script>
+</body>
+</html>

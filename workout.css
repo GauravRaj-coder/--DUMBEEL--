@@ -1,0 +1,42 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7df05;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    background-color: #efcd0c;
+    color: #070707;
+    padding: 20px 0;
+}
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color:#030303;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(14, 14, 14, 0.1);
+   
+}
+h2{
+    color: yellow;
+}
+
+.exercise {
+    margin: 10px 0;
+    border: 3px solid white;
+}
+.exercise h3 {
+    color: yellow;
+}
+.description {
+    font-size: 0.9em;
+    color:yellow;
+}
+</style>

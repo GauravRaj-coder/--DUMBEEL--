@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #151513;
+}
+header, footer {
+    background-color: #222;
+    color: #f7fb38;
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background: url('nutrition.jpg') no-repeat center center / cover;
+    color: #080808;
+}
+h1 {
+    margin: 0;
+}
+.section {
+    margin: 40px 0;
+}
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.section p {
+    line-height: 1.6;
+}
+.cta {
+    text-align: center;
+    margin: 20px 0;
+}
+.cta a {
+    text-decoration: none;
+    color: #ebe6e6;
+    background-color: #f04a2f;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+</style>

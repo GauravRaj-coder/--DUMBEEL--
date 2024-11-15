@@ -1,0 +1,238 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #FFD700;
+  background-color: #1c1c1c;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-size: cover;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.logo {
+  color: yellow;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 60px;
+  background-color: #474545;
+  transition: 0.5s;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+}
+.nav-links li:hover{
+  background-color: #726208;
+  transform: scale(0.9);
+  cursor: pointer; 
+}
+.nav-links a {
+  color: yellow;
+  font-weight: bold;
+  transition: transform 0.3s ease; /* smooth animation  */
+}
+
+.nav-links a:hover {
+  transform: scale(1.1); /* Zoom-in on hover */
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  color: #FFD700;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #555;
+}
+
+.popup-content button {
+  width: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #FFD700;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Sections */
+.section {
+  padding: 1px 20pxx;
+  text-align: center;
+  
+}
+
+h1, h2 {
+  color: #FFD700;
+}
+
+p {
+  color: #ccc;
+}
+.cta a{
+  color: #FFD700;
+  transition: 0.5s;
+margin-bottom: 2px;
+}
+.cta a:hover{
+  
+  background-color: #726208;
+  transform: scale(0.9);
+  cursor: pointer;
+}
+/* Hero Image */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  color: #FFD700;
+  margin: 10px 0;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input, .contact-form textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-around; 
+  flex-wrap: wrap; /* Wrap items to next line if necessary */
+  padding: 20px; /* Add some padding */
+  background-color: #090909; /* Light background for contrast */
+}
+
+.testimonial {
+  text-align: center; /* Center text in each testimonial */
+  margin: 15px; /* Margin between testimonials */
+  max-width: 250px; /* Limit width for consistency */
+  border: 1px solid #ccc; /* Optional border for styling */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside testimonial */
+  background-color: #fff; /* White background for testimonials */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.testimonial-img {
+  width: 200px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make images circular */
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+.name {
+  font-weight: bold; /* Bold name */
+  margin: 5px 0; /* Margin for spacing */
+  color: black;
+}
+
+.rating {
+  color: #555; /* Dark gray for the rating text */
+  font-style: italic; /* Italicize the rating text */
+}
+
+}
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .cards {
+    flex-direction: column;
+  }
+}
